@@ -1,4 +1,9 @@
+var cursor = new osuCursor();
+var cursor = new osuCursor({
+    rotate: false
+});
  // Function to set the theme and update UI
+
  function setTheme(theme) {
     document.body.setAttribute('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
@@ -11,7 +16,7 @@
 
 var currentTheme = localStorage.getItem('theme') || 'dark';
 setTheme(currentTheme);
-var cursor = new osuCursor();
+
 // Event listener for the switch theme button
 var switchThemeBtn = document.getElementById('switchTheme');
 if (switchThemeBtn) {
@@ -20,9 +25,7 @@ if (switchThemeBtn) {
         setTheme(currentTheme);
     });
 }
-var cursor = new osuCursor({
-    rotate: false
-});
+
 //AOS Initiliaze
 AOS.init();
 
