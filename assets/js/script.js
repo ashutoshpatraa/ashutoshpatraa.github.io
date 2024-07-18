@@ -1,6 +1,4 @@
-
  // Function to set the theme and update UI
-
  function setTheme(theme) {
     document.body.setAttribute('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
@@ -75,4 +73,3 @@ $(document).ready(function(){
         }
     });
 });
-
