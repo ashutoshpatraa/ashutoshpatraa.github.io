@@ -73,3 +73,5 @@ $(document).ready(function(){
         }
     });
 });
+
+var cursor = new osuCursor();
