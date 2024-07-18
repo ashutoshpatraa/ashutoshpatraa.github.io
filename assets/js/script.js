@@ -11,7 +11,7 @@
 
 var currentTheme = localStorage.getItem('theme') || 'dark';
 setTheme(currentTheme);
-
+var cursor = new osuCursor();
 // Event listener for the switch theme button
 var switchThemeBtn = document.getElementById('switchTheme');
 if (switchThemeBtn) {
@@ -20,7 +20,9 @@ if (switchThemeBtn) {
         setTheme(currentTheme);
     });
 }
-
+var cursor = new osuCursor({
+    rotate: false
+});
 //AOS Initiliaze
 AOS.init();
 
@@ -74,4 +76,3 @@ $(document).ready(function(){
     });
 });
 
-var cursor = new osuCursor();
