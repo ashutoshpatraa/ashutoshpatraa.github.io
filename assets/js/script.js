@@ -1,7 +1,4 @@
-var cursor = new osuCursor();
-var cursor = new osuCursor({
-    rotate: false
-});
+
  // Function to set the theme and update UI
 
  function setTheme(theme) {
