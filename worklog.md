@@ -292,3 +292,6 @@ conceptual leaps made, keystrokes conserved; sometimes progress is silent.
 ## 2025-07-17T09:21:34
 mental load testing, servers unchallenged; capacity planning in theory.
 
+## 2025-07-18T12:37:23
+considered scalability issues, scaling postponed; thinking big while starting small.
+
