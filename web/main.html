@@ -344,9 +344,129 @@
             text-shadow: 0 0 8px rgba(139, 92, 246, 0.6), 0 0 16px rgba(139, 92, 246, 0.4);
             transition: text-shadow 0.3s ease;
         }
+        
+        /* Interactive Background Styles */
+        .interactive-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            z-index: -2;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 0 8px rgba(139, 92, 246, 0.1);
+        }
+        
+        .particle:nth-child(odd) {
+            animation-direction: reverse;
+        }
+        
+        .particle:nth-child(2n) {
+            background: rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.1);
+        }
+        
+        .particle:nth-child(3n) {
+            background: rgba(168, 85, 247, 0.08);
+            border-color: rgba(168, 85, 247, 0.15);
+            box-shadow: 0 0 8px rgba(168, 85, 247, 0.1);
+        }
+        
+        .particle:nth-child(4n) {
+            background: rgba(236, 72, 153, 0.08);
+            border-color: rgba(236, 72, 153, 0.15);
+            box-shadow: 0 0 8px rgba(236, 72, 153, 0.1);
+            animation-duration: 30s;
+        }
+        
+        .particle:nth-child(5n) {
+            background: rgba(34, 197, 94, 0.08);
+            border-color: rgba(34, 197, 94, 0.15);
+            animation-duration: 25s;
+            box-shadow: 0 0 8px rgba(34, 197, 94, 0.1);
+        }
+        
+        .particle:nth-child(6n) {
+            background: rgba(251, 146, 60, 0.08);
+            border-color: rgba(251, 146, 60, 0.15);
+            animation-duration: 35s;
+            box-shadow: 0 0 8px rgba(251, 146, 60, 0.1);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(2px);
+            z-index: -1;
+        }
+        
+        /* Glass morphism enhancement */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-200 via-purple-50 to-purple-300 text-slate-800 min-h-screen relative">
+<body class="text-slate-800 min-h-screen relative overflow-x-hidden">
+
+    <!-- Interactive Background -->
+    <div class="interactive-bg"></div>
+    <div class="bg-overlay"></div>
+    
+    <!-- Particles Container -->
+    <div class="particles-container" id="particles"></div>
 
     <!-- Custom Glass Cursor -->
     <div class="custom-cursor" id="customCursor"></div>
@@ -646,6 +766,75 @@
 
         // AOS init
         AOS.init({ once: true, duration: 800 });
+
+        // Interactive Background with Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 25 : 50; // Reduced particles for cleaner iOS look
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Smaller, more subtle particles (3px to 10px)
+                const size = Math.random() * 7 + 3;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random horizontal position
+                particle.style.left = Math.random() * 100 + '%';
+                
+                // Random animation delay
+                particle.style.animationDelay = Math.random() * 30 + 's';
+                
+                // Slower, more elegant animation
+                const duration = Math.random() * 20 + 25;
+                particle.style.animationDuration = duration + 's';
+                
+                // More subtle opacity
+                const opacity = Math.random() * 0.3 + 0.1;
+                particle.style.opacity = opacity;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Interactive background that follows mouse
+        function initInteractiveBackground() {
+            const interactiveBg = document.querySelector('.interactive-bg');
+            let mouseX = 0;
+            let mouseY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth) * 100;
+                mouseY = (e.clientY / window.innerHeight) * 100;
+                
+                // Update background position based on mouse movement
+                interactiveBg.style.backgroundPosition = `${mouseX}% ${mouseY}%`;
+            });
+            
+            // Add touch support for mobile
+            document.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 0) {
+                    mouseX = (e.touches[0].clientX / window.innerWidth) * 100;
+                    mouseY = (e.touches[0].clientY / window.innerHeight) * 100;
+                    interactiveBg.style.backgroundPosition = `${mouseX}% ${mouseY}%`;
+                }
+            });
+        }
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initInteractiveBackground();
+        });
+        
+        // Recreate particles on window resize
+        window.addEventListener('resize', () => {
+            const particlesContainer = document.getElementById('particles');
+            particlesContainer.innerHTML = '';
+            createParticles();
+        });
     </script>
 </body>
 </html></svg>
