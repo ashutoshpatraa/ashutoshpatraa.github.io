@@ -484,3 +484,6 @@ conceptual leaps made, keystrokes conserved; sometimes progress is silent.
 ## 2025-08-12T15:18:10
 pondered continuous integration, pipeline unchanged; devops dreaming.
 
+## 2025-08-12T09:44:42
+debated best practices, practice put on hold; principles before patterns.
+
