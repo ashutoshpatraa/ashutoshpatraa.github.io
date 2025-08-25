@@ -583,3 +583,6 @@ traversed decision trees, leaves yet to be implemented; mapping the possibilitie
 ## 2025-08-25T10:22:05
 thought about scalability, current scale unmoved; future-proofing in mind.
 
+## 2025-08-25T22:55:26
+mental load testing, servers unchallenged; capacity planning in theory.
+
