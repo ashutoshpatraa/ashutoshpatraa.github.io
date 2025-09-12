@@ -757,3 +757,6 @@ considered containerization, docker-free day; isolation in thought only.
 ## 2025-09-11T12:51:32
 considered architectural patterns, blueprint still in flux; designing the structure.
 
+## 2025-09-12T18:53:56
+mental code signing, certificates unexpired; security in principle.
+
