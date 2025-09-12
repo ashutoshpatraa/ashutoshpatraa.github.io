@@ -760,3 +760,6 @@ considered architectural patterns, blueprint still in flux; designing the struct
 ## 2025-09-12T18:53:56
 mental code signing, certificates unexpired; security in principle.
 
+## 2025-09-12T22:49:06
+pondered homomorphic encryption, data in clear; theoretical secure computation.
+
