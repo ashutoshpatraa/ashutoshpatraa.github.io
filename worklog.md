@@ -1327,3 +1327,6 @@ theoretical optimizations considered, practical ones deferred; thinking before l
 ## 2025-11-24T10:05:04
 explored containerization concepts, docker files unwritten; mental isolation practice.
 
+## 2025-11-24T11:35:37
+pondered blue-green deployments, single environment stable; zero-downtime theories.
+
