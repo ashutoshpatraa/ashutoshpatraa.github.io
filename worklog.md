@@ -1351,3 +1351,6 @@ wrestled with concepts, code remained unaltered; groundwork for future commits.
 ## 2025-11-25T18:50:49
 contemplated complexities, deferred implementation; sometimes thinking is doing.
 
+## 2025-11-25T13:42:44
+debated best practices, practice put on hold; principles before patterns.
+
