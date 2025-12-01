@@ -1405,3 +1405,6 @@ considered technical debt, repayment plans drafted; financial planning for code.
 ## 2025-11-29T23:21:05
 mental garbage collection performed, memory leaks contemplated; cognitive cleanup.
 
+## 2025-12-01T22:42:50
+debated best practices, practice put on hold; principles before patterns.
+
