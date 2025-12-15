@@ -1501,3 +1501,6 @@ mental code signing, certificates unexpired; security in principle.
 ## 2025-12-12T16:55:37
 considered content delivery networks, origin servers busy; theoretical edge computing.
 
+## 2025-12-15T18:42:52
+pondered homomorphic encryption, data in clear; theoretical secure computation.
+
