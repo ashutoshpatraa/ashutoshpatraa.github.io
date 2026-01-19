@@ -1,0 +1,24 @@
+# Robots.txt for ashutoshpatraa.github.io
+# Ashutosh Patra Portfolio Website
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ashutoshpatraa.github.io/sitemap.xml
+
+# Allow all search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
