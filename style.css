@@ -3,6 +3,7 @@
     src: url('Agustina.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 :root {
@@ -101,6 +102,7 @@ body {
     height: 40px;
     border: 1px solid var(--secondary-accent);
     transition: width 0.2s, height 0.2s, background-color 0.2s;
+    will-change: left, top;
 }
 
 body:hover .cursor-outline {

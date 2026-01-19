@@ -1,22 +1,29 @@
 
-// Custom Cursor
+// Custom Cursor with requestAnimationFrame (non-blocking)
 const cursorDot = document.querySelector("#cursor-dot");
 const cursorOutline = document.querySelector("#cursor-outline");
 
 if (cursorDot && cursorOutline) {
+    let lastX = 0, lastY = 0, outlineX = 0, outlineY = 0;
+    let animationFrameId = null;
+
+    const updateOutline = () => {
+        outlineX += (lastX - outlineX) * 0.2;
+        outlineY += (lastY - outlineY) * 0.2;
+        cursorOutline.style.left = `${outlineX}px`;
+        cursorOutline.style.top = `${outlineY}px`;
+        animationFrameId = requestAnimationFrame(updateOutline);
+    };
+
     window.addEventListener("mousemove", (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        // Add some delay/smoothness to outline
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
+        lastX = e.clientX;
+        lastY = e.clientY;
+        cursorDot.style.left = `${lastX}px`;
+        cursorDot.style.top = `${lastY}px`;
+        if (!animationFrameId) {
+            animationFrameId = requestAnimationFrame(updateOutline);
+        }
+    }, { passive: true });
 }
 
 // Mobile Menu Toggle with Accessibility
@@ -43,11 +50,17 @@ document.querySelectorAll('.nav-item').forEach(link => {
     });
 });
 
-// Active Link Highlight on Scroll
+// Active Link Highlight on Scroll (Throttled)
 const sections = document.querySelectorAll('section');
 const navItems = document.querySelectorAll('.nav-item');
+let lastScrollTime = 0;
+const scrollThrottle = 100;
 
 window.addEventListener('scroll', () => {
+    const now = Date.now();
+    if (now - lastScrollTime < scrollThrottle) return;
+    lastScrollTime = now;
+
     let current = '';
 
     sections.forEach(section => {
@@ -65,7 +78,7 @@ window.addEventListener('scroll', () => {
             item.classList.add('active');
         }
     });
-});
+}, { passive: true });
 
 // Fade In Animation using Intersection Observer
 const observerOptions = {
