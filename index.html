@@ -21,9 +21,9 @@
     <link rel="canonical" href="https://ashutoshpatraa.github.io/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./ashu.png">
-    <link rel="apple-touch-icon" href="./ashu.png">
-    <link rel="shortcut icon" href="./ashu.png" type="image/png">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -63,9 +63,18 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Preload Critical Font -->
+    <link rel="preload" href="Agustina.woff" as="font" type="font/woff" crossorigin>
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Font Awesome (Deferred) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 
     <!-- Structured Data - Person Schema -->
     <script type="application/ld+json">
