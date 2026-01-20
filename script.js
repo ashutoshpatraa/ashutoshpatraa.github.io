@@ -1,29 +1,33 @@
 
 // Custom Cursor with requestAnimationFrame (non-blocking)
-const cursorDot = document.querySelector("#cursor-dot");
-const cursorOutline = document.querySelector("#cursor-outline");
+// Custom Cursor with requestAnimationFrame (non-blocking)
+// Only initialize on devices with a fine pointer (mouse) to save resources on mobile
+if (window.matchMedia("(pointer: fine)").matches) {
+    const cursorDot = document.querySelector("#cursor-dot");
+    const cursorOutline = document.querySelector("#cursor-outline");
 
-if (cursorDot && cursorOutline) {
-    let lastX = 0, lastY = 0, outlineX = 0, outlineY = 0;
-    let animationFrameId = null;
+    if (cursorDot && cursorOutline) {
+        let lastX = 0, lastY = 0, outlineX = 0, outlineY = 0;
+        let animationFrameId = null;
 
-    const updateOutline = () => {
-        outlineX += (lastX - outlineX) * 0.2;
-        outlineY += (lastY - outlineY) * 0.2;
-        cursorOutline.style.left = `${outlineX}px`;
-        cursorOutline.style.top = `${outlineY}px`;
-        animationFrameId = requestAnimationFrame(updateOutline);
-    };
-
-    window.addEventListener("mousemove", (e) => {
-        lastX = e.clientX;
-        lastY = e.clientY;
-        cursorDot.style.left = `${lastX}px`;
-        cursorDot.style.top = `${lastY}px`;
-        if (!animationFrameId) {
+        const updateOutline = () => {
+            outlineX += (lastX - outlineX) * 0.2;
+            outlineY += (lastY - outlineY) * 0.2;
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
             animationFrameId = requestAnimationFrame(updateOutline);
-        }
-    }, { passive: true });
+        };
+
+        window.addEventListener("mousemove", (e) => {
+            lastX = e.clientX;
+            lastY = e.clientY;
+            cursorDot.style.left = `${lastX}px`;
+            cursorDot.style.top = `${lastY}px`;
+            if (!animationFrameId) {
+                animationFrameId = requestAnimationFrame(updateOutline);
+            }
+        }, { passive: true });
+    }
 }
 
 // Mobile Menu Toggle with Accessibility

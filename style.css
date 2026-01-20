@@ -876,4 +876,18 @@ h6 {
     .footer-tagline {
         padding: 0 1rem;
     }
+
+    /* Mobile Performance Optimizations */
+    .glass-card {
+        backdrop-filter: none;
+        /* Disable expensive blur on mobile */
+        background: rgba(13, 15, 20, 0.9);
+        /* Opaque fallback */
+    }
+
+    .blob {
+        filter: blur(40px);
+        /* Reduce blur radius for performance */
+        opacity: 0.4;
+    }
 }
