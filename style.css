@@ -345,14 +345,14 @@ h6 {
 }
 
 .social-links {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .social-links a {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: 1.8rem;
     transition: var(--transition-fast);
 }
