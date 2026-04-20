@@ -2383,3 +2383,6 @@ explored web assembly, javascript dominant; theoretical performance optimization
 ## 2026-04-18T17:22:45
 considered refactoring strategies, legacy code untouched; renovation planning.
 
+## 2026-04-20T15:04:51
+abstraction level increased, concrete implementations deferred; hovering above the code.
+
