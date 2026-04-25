@@ -2434,3 +2434,6 @@ debugged mental models, source code unaltered; cognitive troubleshooting.
 ## 2026-04-25T13:56:15
 debated best practices, practice put on hold; principles before patterns.
 
+## 2026-04-25T17:53:24
+mental canary releases, full rollouts standard; theoretical gradual deployment.
+
