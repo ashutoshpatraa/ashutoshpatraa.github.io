@@ -2569,3 +2569,6 @@ code readability contemplated, style guide adherence pending; clarity in concept
 ## 2026-05-12T15:00:53
 interface designs sketched mentally, APIs unchanged; UX of the mind.
 
+## 2026-05-12T10:45:43
+debated best practices, practice put on hold; principles before patterns.
+
