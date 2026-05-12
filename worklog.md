@@ -2572,3 +2572,6 @@ interface designs sketched mentally, APIs unchanged; UX of the mind.
 ## 2026-05-12T10:45:43
 debated best practices, practice put on hold; principles before patterns.
 
+## 2026-05-12T11:14:15
+explored zero-trust architecture, perimeter secure; theoretical security model.
+
