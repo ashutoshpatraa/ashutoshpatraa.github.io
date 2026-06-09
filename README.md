@@ -4,30 +4,7 @@ A premium, interactive, 3D portfolio built with **Vite, React, TypeScript, Three
 
 🌐 **Live Website:** [ashutoshpatra.tech](https://ashutoshpatra.tech)
 
----
 
-## 📸 Screenshots
-
-### Hero Section (with Interactive 3D Particles)
-![Hero Section](./public/screenshots/loading_or_hero_1780988016442.png)
-
-### About Me (RPG Style Character Profile)
-![About Section](./public/screenshots/about_section_1780988045747.png)
-
-### Skills Constellation
-![Skills Section](./public/screenshots/skills_section_1780988055964.png)
-
-### Projects & Missions
-![Projects Section](./public/screenshots/projects_section_1780988065762.png)
-![Other Missions](./public/screenshots/other_missions_1780988079271.png)
-
-### Journey & Timeline
-![Timeline Section](./public/screenshots/timeline_section_1780988091707.png)
-
-### Contact
-![Contact Section](./public/screenshots/contact_and_footer_1780988109116.png)
-
----
 
 ## 🛠️ Tech Stack
 
