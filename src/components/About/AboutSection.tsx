@@ -52,13 +52,7 @@ export default function AboutSection() {
         </motion.div>
 
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'clamp(260px, 30%, 340px) 1fr',
-            gap: '2rem',
-            alignItems: 'start',
-          }}
-          className="xl:grid-cols-[340px_1fr] flex flex-col xl:grid"
+          className="flex flex-col lg:grid lg:grid-cols-[340px_1fr] gap-8 items-start"
         >
           {/* ── Left: Profile photo + status ── */}
           <motion.div
@@ -251,13 +245,9 @@ export default function AboutSection() {
               </div>
 
               <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '0.85rem 2rem',
-                }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
               >
-                {RPG_STATS.map(({ label, value, mono, color }) => (
+                  {RPG_STATS.map(({ label, value, mono, color }) => (
                   <div key={label}>
                     <span
                       style={{
