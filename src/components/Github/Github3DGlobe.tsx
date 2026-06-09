@@ -23,7 +23,7 @@ function WireframeGlobe() {
       {/* The glowing wireframe shell */}
       <mesh geometry={wireGeometry}>
         <meshBasicMaterial 
-          color="#84cc16" 
+          color="#00D4FF" 
           wireframe
           transparent
           opacity={0.25}
