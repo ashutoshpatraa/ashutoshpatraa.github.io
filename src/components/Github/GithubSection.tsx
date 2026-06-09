@@ -62,10 +62,10 @@ export default function GithubSection() {
           style={{ marginBottom: '3rem' }}
         >
           <h2 className="section-title" style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-            GitHub Command Center
+            Open Source Nexus
           </h2>
           <p className="section-subtitle" style={{ maxWidth: '600px' }}>
-            A live command surface connected to GitHub public activity, repositories, and build momentum.
+            A live connection surface synced to my GitHub public activity, repositories, and build momentum.
           </p>
         </motion.div>
 

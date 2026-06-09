@@ -45,8 +45,8 @@ export default function App() {
           <AboutSection />
           <SkillsSection />
           <ProjectsSection />
-          <TimelineSection />
           <GithubSection />
+          <TimelineSection />
           <ContactSection />
         </main>
 
