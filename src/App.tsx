@@ -7,6 +7,7 @@ import AboutSection from './components/About/AboutSection'
 import SkillsSection from './components/Skills/SkillsSection'
 import ProjectsSection from './components/Projects/ProjectsSection'
 import TimelineSection from './components/Timeline/TimelineSection'
+import GithubSection from './components/Github/GithubSection'
 import ContactSection from './components/Contact/ContactSection'
 import Footer from './components/layout/Footer'
 
@@ -45,6 +46,7 @@ export default function App() {
           <SkillsSection />
           <ProjectsSection />
           <TimelineSection />
+          <GithubSection />
           <ContactSection />
         </main>
 
