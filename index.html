@@ -1,696 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO -->
+    <title>Ashutosh Patra | Developer Portfolio</title>
+    <meta name="title" content="Ashutosh Patra | Developer Portfolio" />
+    <meta name="description" content="Hi, I'm Ashutosh Patra — a developer, open source learner, and future software engineer from India. Explore my projects and tech journey." />
+    <meta name="keywords" content="Ashutosh Patra, ashutoshpatraa, developer, portfolio, python, web development, open source, India" />
+    <meta name="author" content="Ashutosh Patra" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://ashutoshpatra.tech/" />
 
-    <!-- Primary SEO Meta Tags -->
-    <title>Ashutosh Patra | Full Stack Developer & Python Enthusiast | ashutoshpatraa</title>
-    <meta name="title" content="Ashutosh Patra | Full Stack Developer & Python Enthusiast | ashutoshpatraa">
-    <meta name="description"
-        content="Hi, I'm Ashutosh Patra (ashutoshpatraa) - a 17-year-old Full Stack Developer, Python Enthusiast, 3D Modeler, and Tech Geek from India. Explore my projects, skills, and creative work. Connect with Ashutosh Patra on GitHub.">
-    <meta name="keywords"
-        content="Ashutosh Patra, ashutosh patra, ashutoshpatraa, ashutosh patra dev, ashutosh patra github, ashutosh patra developer, ashutosh patra portfolio, web developer, python developer, full stack developer, 3D modeler, india developer, ashu patra">
-    <meta name="author" content="Ashutosh Patra">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
+    <!-- Theme -->
+    <meta name="theme-color" content="#000005" />
+    <meta name="msapplication-TileColor" content="#000005" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://ashutoshpatraa.github.io/">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <link rel="apple-touch-icon" href="./favicon.png">
-    <link rel="shortcut icon" href="./favicon.png" type="image/png">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ashutoshpatraa.github.io/">
-    <meta property="og:title" content="Ashutosh Patra | Full Stack Developer & Python Enthusiast">
-    <meta property="og:description"
-        content="Hi, I'm Ashutosh Patra (ashutoshpatraa) - a 17-year-old Full Stack Developer, Python Enthusiast, 3D Modeler, and Tech Geek from India. Explore my projects and connect with me.">
-    <meta property="og:image" content="https://ashutoshpatraa.github.io/ashu.png">
-    <meta property="og:image:alt" content="Ashutosh Patra - Developer Portfolio">
-    <meta property="og:site_name" content="Ashutosh Patra Portfolio">
-    <meta property="og:locale" content="en_US">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ashutoshpatra.tech/" />
+    <meta property="og:title" content="Ashutosh Patra | Developer Portfolio" />
+    <meta property="og:description" content="Developer, open source learner, and future software engineer from India. Explore my projects and tech journey." />
+    <meta property="og:image" content="https://ashutoshpatra.tech/ashu.png" />
+    <meta property="og:image:alt" content="Ashutosh Patra — Developer Portfolio" />
+    <meta property="og:site_name" content="Ashutosh Patra" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://ashutoshpatraa.github.io/">
-    <meta name="twitter:title" content="Ashutosh Patra | Full Stack Developer & Python Enthusiast">
-    <meta name="twitter:description"
-        content="Hi, I'm Ashutosh Patra (ashutoshpatraa) - a 17-year-old Full Stack Developer, Python Enthusiast, 3D Modeler, and Tech Geek from India.">
-    <meta name="twitter:image" content="https://ashutoshpatraa.github.io/ashu.png">
-    <meta name="twitter:creator" content="@ashutoshpatraa">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ashutoshpatra.tech/" />
+    <meta name="twitter:title" content="Ashutosh Patra | Developer Portfolio" />
+    <meta name="twitter:description" content="Developer, open source learner, and future software engineer from India." />
+    <meta name="twitter:image" content="https://ashutoshpatra.tech/ashu.png" />
+    <meta name="twitter:creator" content="@ashutoshpatraa" />
 
-    <!-- Additional SEO Tags -->
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-
-    <!-- Google Fonts with display swap for better performance -->
+    <!-- Fonts — preconnect first, then stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Preload Critical Font -->
-    <link rel="preload" href="Agustina.woff" as="font" type="font/woff" crossorigin>
+    <!-- Preload local font -->
+    <link rel="preload" href="./Agustina.woff" as="font" type="font/woff" crossorigin />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Font Awesome (Deferred) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
-
-    <!-- Structured Data - Person Schema -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ashutosh Patra",
-        "alternateName": ["ashutoshpatraa", "Ashu Patra", "Ashu"],
-        "url": "https://ashutoshpatraa.github.io/",
-        "image": "https://ashutoshpatraa.github.io/ashu.png",
-        "description": "17-year-old Full Stack Developer, Python Enthusiast, 3D Modeler, and Tech Geek from India",
-        "jobTitle": "Full Stack Developer",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Freelance"
-        },
-        "sameAs": [
-            "https://github.com/ashutoshpatraa",
-            "https://www.linkedin.com/in/ashutoshpatraa",
-            "https://www.instagram.com/ashudoesnothinng",
-            "https://www.commudle.com/users/ashutoshpatra"
-        ],
-        "email": "ashutoshpatra616@gmail.com",
-        "knowsAbout": ["Python", "JavaScript", "HTML", "CSS", "NodeJS", "Web Development", "3D Modeling", "Blender", "TensorFlow", "Machine Learning"],
-        "alumniOf": {
-            "@type": "Organization",
-            "name": "High School Student"
-        }
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ashutosh Patra",
+      "alternateName": ["ashutoshpatraa", "Ashu Patra"],
+      "url": "https://ashutoshpatra.tech/",
+      "image": "https://ashutoshpatra.tech/ashu.png",
+      "description": "Computer Science Student, Developer, Open Source Learner, and Future Software Engineer from India",
+      "jobTitle": "Developer",
+      "sameAs": [
+        "https://github.com/ashutoshpatraa",
+        "https://www.linkedin.com/in/ashutoshpatraa",
+        "https://www.instagram.com/ashudoesnothinng"
+      ],
+      "email": "ashutoshpatra616@gmail.com"
     }
     </script>
-
-    <!-- Structured Data - Website Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Ashutosh Patra Portfolio",
-        "alternateName": ["ashutoshpatraa", "Ashutosh Patra Dev"],
-        "url": "https://ashutoshpatraa.github.io/",
-        "description": "Official portfolio website of Ashutosh Patra - Full Stack Developer and Python Enthusiast",
-        "author": {
-            "@type": "Person",
-            "name": "Ashutosh Patra"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://ashutoshpatraa.github.io/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-
-    <!-- Structured Data - ProfilePage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "mainEntity": {
-            "@type": "Person",
-            "name": "Ashutosh Patra",
-            "alternateName": "ashutoshpatraa"
-        },
-        "dateCreated": "2024-01-01",
-        "dateModified": "2026-01-19"
-    }
-    </script>
-</head>
-
-<body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
-
-    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-outline" id="cursor-outline" aria-hidden="true"></div>
-
-    <header role="banner">
-        <nav class="navbar" aria-label="Main navigation">
-            <div class="container">
-                <a href="https://ashutoshpatraa.github.io/" class="logo"
-                    title="Ashutosh Patra - Developer Portfolio">&lt; <span class="signature">Ashutosh Patra</span>
-                    /&gt;</a>
-                <div class="nav-links" role="navigation">
-                    <a href="#hero" class="nav-item" aria-label="Go to Home section">// home</a>
-                    <a href="#about" class="nav-item" aria-label="Go to About section">// about</a>
-                    <a href="#skills" class="nav-item" aria-label="Go to Skills section">// skills</a>
-                    <a href="#projects" class="nav-item" aria-label="Go to Projects section">// projects</a>
-                    <a href="#contact" class="nav-item" aria-label="Go to Contact section">// contact</a>
-                </div>
-                <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <main id="main-content" role="main">
-        <!-- Hero Section - Ashutosh Patra Portfolio -->
-        <section id="hero" class="hero" aria-labelledby="hero-title">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="greeting">Namasté, I'm</span>
-                    <h1 id="hero-title" class="name">Ashu</h1>
-                    <h2 class="role">Tech Geek &amp; <span class="typing-text">Python Enthusiast</span></h2>
-                    <p class="hero-bio">
-                        Hi! I'm <strong>Ashutosh Patra</strong> (also known as <strong>Ashu</strong>),
-                        a 17-year-old developer from India passionate about creating meaningful tech solutions.
-                        Currently focused on Full Stack Development and Machine Learning.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary" aria-label="View my developer projects">View
-                            Projects</a>
-                        <a href="#contact" class="btn btn-secondary" aria-label="Contact Ashutosh Patra">Contact Me</a>
-                    </div>
-                    <div class="social-links" aria-label="Social media links">
-                        <a href="https://github.com/ashutoshpatraa" target="_blank" rel="noopener noreferrer"
-                            aria-label="Visit Ashutosh Patra GitHub profile" title="Ashutosh Patra on GitHub"><i
-                                class="fab fa-github" aria-hidden="true"></i></a>
-                        <a href="https://www.linkedin.com/in/ashutoshpatraa" target="_blank" rel="noopener noreferrer"
-                            aria-label="Connect with Ashutosh Patra on LinkedIn" title="Ashutosh Patra on LinkedIn"><i
-                                class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com/ashudoesnothinng" target="_blank" rel="noopener noreferrer"
-                            aria-label="Follow Ashutosh Patra on Instagram" title="Ashutosh Patra on Instagram"><i
-                                class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <a href="https://www.commudle.com/users/ashutoshpatra" target="_blank" rel="noopener noreferrer"
-                            aria-label="Visit Ashutosh Patra Commudle profile" title="Ashutosh Patra on Commudle"><i
-                                class="fas fa-users" aria-hidden="true"></i></a>
-                        <a href="mailto:ashutoshpatra616@gmail.com" aria-label="Send email to Ashutosh Patra"
-                            title="Email Ashutosh Patra"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <div class="hero-visual" aria-hidden="true">
-                    <div class="blob-cont">
-                        <div class="blob blob-1"></div>
-                        <div class="blob blob-2"></div>
-                        <div class="blob blob-3"></div>
-                    </div>
-                    <!-- Profile Card -->
-                    <div class="glass-card profile-card">
-                        <img src="./1721287147675.jpg"
-                            alt="Ashutosh Patra - Full Stack Developer and Python Enthusiast from India"
-                            class="card-img" loading="lazy" width="200" height="200">
-                        <div class="card-content">
-                            <h3>Ashutosh Patra</h3>
-                            <p>17 y/o Developer • He/Him</p>
-                            <div class="status-badge">
-                                <span class="dot"></span> Open to work
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section about">
-            <div class="container">
-                <h2 class="section-title">About Me<span class="accent">.</span></h2>
-
-                <div class="about-grid">
-                    <div class="about-card intro-card">
-                        <h3>🌱 Currently Learning</h3>
-                        <p>Python</p>
-                        <h3>💬 Ask Me About</h3>
-                        <p>Tech, Anime, and why my code isn't working</p>
-                        <h3>⚡ Fun Fact</h3>
-                        <p>I love anime</p>
-                    </div>
-
-                    <div class="about-card profile-details">
-                        <h3>✨ Personal Profile</h3>
-                        <ul class="details-list">
-                            <li><span>Age:</span> 17</li>
-                            <li><span>Vibe:</span> Calm, Observant, Real</li>
-                            <li><span>Music:</span> Pop 🎧</li>
-                            <li><span>Interests:</span> Aesthetics, Fashion, Sports, Tech</li>
-                        </ul>
-                    </div>
-
-                    <div class="about-card hobbies">
-                        <h3>🪴 Hobbies</h3>
-                        <div class="tags">
-                            <span class="tag">Gardening</span>
-                            <span class="tag">Cooking</span>
-                            <span class="tag">Gaming</span>
-                        </div>
-                    </div>
-
-                    <div class="about-card gaming">
-                        <h3>🎮 Games I Play</h3>
-                        <div class="tags">
-                            <span class="tag">Minecraft</span>
-                            <span class="tag">Roblox</span>
-                            <span class="tag">Valorant</span>
-                            <span class="tag">GTA Online</span>
-                        </div>
-                    </div>
-
-                    <div class="about-card anime">
-                        <h3>📺 Favorite Anime</h3>
-                        <ul class="anime-list">
-                            <li>One Piece 🌊</li>
-                            <li>Tokyo Ghoul</li>
-                            <li>Jujutsu Kaisen</li>
-                            <li>Demon Slayer</li>
-                            <li>A Silent Voice</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section skills">
-            <div class="container">
-                <h2 class="section-title">Tech Stack<span class="accent">.</span></h2>
-                <div class="skills-wrapper">
-                    <div class="skill-category">
-                        <h3>Development</h3>
-                        <div class="skill-grid">
-                            <div class="skill-item"><i class="fab fa-html5" style="color: #e34c26;"></i>
-                                <span>HTML5</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-css3-alt" style="color: #264de4;"></i>
-                                <span>CSS3</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-js" style="color: #f0db4f;"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-python" style="color: #3776ab;"></i>
-                                <span>Python</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-node-js" style="color: #68a063;"></i>
-                                <span>NodeJS</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-file-code" style="color: #38b2ac;"></i>
-                                <span>TailwindCSS</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-bootstrap" style="color: #7952b3;"></i>
-                                <span>Bootstrap</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-database" style="color: #4db33d;"></i>
-                                <span>MongoDB</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-moon" style="color: #000000;"></i> <span>Lua</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Tools & Design</h3>
-                        <div class="skill-grid">
-                            <div class="skill-item"><i class="fas fa-cube" style="color: #e87d0d;"></i>
-                                <span>Blender</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-figma" style="color: #f24e1e;"></i>
-                                <span>Figma</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-palette" style="color: #00c4cc;"></i>
-                                <span>Canva</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-git-alt" style="color: #f05032;"></i>
-                                <span>Git</span>
-                            </div>
-                            <div class="skill-item"><i class="fab fa-github" style="color: #181717;"></i>
-                                <span>GitHub</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-image" style="color: #31a8ff;"></i>
-                                <span>Photoshop</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-video" style="color: #9999ff;"></i> <span>Premiere
-                                    Pro</span></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Data Science</h3>
-                        <div class="skill-grid">
-                            <div class="skill-item"><i class="fas fa-chart-bar" style="color: #ffca28;"></i>
-                                <span>Pandas</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-calculator" style="color: #4285f4;"></i>
-                                <span>NumPy</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-chart-line" style="color: #f48fb1;"></i>
-                                <span>Matplotlib</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-brain" style="color: #ff6f00;"></i>
-                                <span>TensorFlow</span>
-                            </div>
-                            <div class="skill-item"><i class="fas fa-robot" style="color: #f57f17;"></i>
-                                <span>scikit-learn</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section projects">
-            <div class="container">
-                <h2 class="section-title">Featured Projects<span class="accent">.</span></h2>
-                <div class="projects-grid">
-                    <!-- Artiste -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder art">🎨</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>Artiste</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashu-pp/artiste-website" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                    <a href="https://github.com/ashu-pp/artiste-website" target="_blank"><i
-                                            class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                            <p>An e-commerce store to sell and buy artwork. Built to support artists and art lovers.</p>
-                            <div class="project-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JS</span>
-                                <span>NodeJS</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- EduVR -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder vr">🥽</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>EduVR</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/EduVR" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                    <a href="https://ashutoshpatraa.github.io/EduVR/" target="_blank"><i
-                                            class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                            <p>Where education meets virtual reality. Immersive learning experiences through 3D modeling
-                                on the web.</p>
-                            <div class="project-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>3D</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Pogger -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder game">🎮</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>Pogger</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/Pogger" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                    <a href="https://ashutoshpatraa.github.io/pogger" target="_blank"><i
-                                            class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                            <p>Web-based Ping Pong game using Kaboom.js. Classic arcade action with a modern web twist.
-                            </p>
-                            <div class="project-tech">
-                                <span>Kaboom.js</span>
-                                <span>HTML</span>
-                                <span>JS</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- StudyLogix -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder study">📚</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>StudyLogix</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/StudyLogix" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                    <a href="https://studylogix.app/" target="_blank"><i
-                                            class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                            <p>Nothing OS-inspired web app for tracking study sessions with analytics and Pomodoro
-                                timer.</p>
-                            <div class="project-tech">
-                                <span>Web App</span>
-                                <span>Analytics</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- IssueFlow -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder code">🐛</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>IssueFlow</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/IssueFlow" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>Issue and bug tracking system. Manage projects and collaborate efficiently.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>MySQL</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- AuraPlayer -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder music">🎵</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>AuraPlayer</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/AuraPlayer" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>Aesthetic Spotify Lyrics Visualizer. Experience music visually.</p>
-                            <div class="project-tech">
-                                <span>Visualizer</span>
-                                <span>Spotify API</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- OnlineLudo -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder game">🎲</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>OnlineLudo</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/OnlineLudo" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>Real-time multiplayer online Ludo game. Play the classic board game with friends.</p>
-                            <div class="project-tech">
-                                <span>Web Game</span>
-                                <span>Multiplayer</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- FILENINJA -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder file">📂</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>FILENINJA</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/FILENINJA" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>Intelligent File Organization System with Nothing OS-Inspired Interface.</p>
-                            <div class="project-tech">
-                                <span>File Management</span>
-                                <span>UI/UX</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Poler -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder bot">🤖</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>Poler</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/Poler" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>A mental health chat bot designed to provide support and companionship.</p>
-                            <div class="project-tech">
-                                <span>Chatbot</span>
-                                <span>AI</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Super Mario Python -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder game">🍄</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>Super Mario Python</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/super-mario-python" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>A classic Super Mario clone built using Python and Pygame.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Pygame</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- TherapyHub -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder health">❤️</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>TherapyHub</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/TherapyHub" target="_blank"><i
-                                            class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>Anonymous peer support platform for mental health awareness.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Flask</span>
-                                <span>MySQL</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Personal Finance Tracker -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <div class="img-placeholder finance">💸</div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>Finance Tracker</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/ashutoshpatraa/Personal-Finance-Tracker"
-                                        target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                            <p>Track your expenses, income, and manage your budget effectively.</p>
-                            <div class="project-tech">
-                                <span>Finance</span>
-                                <span>Tool</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section - Hire Ashutosh Patra -->
-        <section id="contact" class="section contact" aria-labelledby="contact-title">
-            <div class="container">
-                <div class="contact-box glass-card">
-                    <h2 id="contact-title">Let's Work Together<span class="accent">!</span></h2>
-                    <p>Looking to hire a <strong>Full Stack Developer</strong>? I'm <strong>Ashutosh Patra</strong>,
-                        always open to new opportunities, freelance projects, and exciting collaborations. Let's build
-                        something amazing together!</p>
-                    <a href="mailto:ashutoshpatra616@gmail.com" class="email-link"
-                        aria-label="Send email to Ashutosh Patra">
-                        <i class="fas fa-envelope" aria-hidden="true"></i> ashutoshpatra616@gmail.com
-                    </a>
-                    <div class="contact-socials" aria-label="Social media profiles of Ashutosh Patra">
-                        <a href="https://www.instagram.com/ashudoesnothinng" target="_blank" rel="noopener noreferrer"
-                            title="Follow Ashutosh Patra on Instagram">Instagram</a>
-                        <a href="https://www.linkedin.com/in/ashutoshpatraa" target="_blank" rel="noopener noreferrer"
-                            title="Connect with Ashutosh Patra on LinkedIn">LinkedIn</a>
-                        <a href="https://github.com/ashutoshpatraa" target="_blank" rel="noopener noreferrer"
-                            title="View Ashutosh Patra's GitHub repositories">GitHub</a>
-                        <a href="https://www.commudle.com/users/ashutoshpatra" target="_blank" rel="noopener noreferrer"
-                            title="Connect with Ashutosh Patra on Commudle">Commudle</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; 2026 <strong>Ashutosh Patra</strong> (ashutoshpatraa). All rights reserved.</p>
-            <p class="footer-tagline">Full Stack Developer | Python Enthusiast | 3D Modeler | Tech Geek from India</p>
-            <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="#hero">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </footer>
-
-    <script src="script.js" defer></script>
-</body>
-
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
 </html>
