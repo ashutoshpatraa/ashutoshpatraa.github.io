@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { motion, useInView, AnimatePresence, useMotionValue, useMotionTemplate } from 'framer-motion'
+import Magnetic from '../ui/Magnetic'
 import { SKILLS, SKILL_CATEGORIES, type SkillCategory } from '../../data/skills'
 
 export default function SkillsSection() {
@@ -103,14 +104,23 @@ export default function SkillsSection() {
           >
             {filteredSkills.map(({ name, icon, level, category }, i) => {
               const catColor = SKILL_CATEGORIES.find((c) => c.name === category)?.color || 'var(--blue)'
+              const mouseX = useMotionValue(0)
+              const mouseY = useMotionValue(0)
+
+              function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+                const { left, top } = currentTarget.getBoundingClientRect()
+                mouseX.set(clientX - left)
+                mouseY.set(clientY - top)
+              }
+
               return (
-                <motion.div
-                  key={name}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
-                  className="skill-node glass-card"
-                  style={{ padding: '1rem 1.1rem', cursor: 'default' }}
+                <Magnetic key={name} intensity={0.1}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
+                    className="skill-node glass-card"
+                  onMouseMove={handleMouseMove}
                   role="listitem"
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLElement
@@ -124,7 +134,27 @@ export default function SkillsSection() {
                     el.style.transform = 'translateY(0) scale(1)'
                     el.style.boxShadow = 'var(--glass-shadow)'
                   }}
+                  style={{
+                    padding: '1rem 1.1rem',
+                    cursor: 'default',
+                    position: 'relative',
+                    overflow: 'hidden',
+                  }}
                 >
+                  {/* Cursor-following glow effect */}
+                  <motion.div
+                    className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+                    style={{
+                      background: useMotionTemplate`
+                        radial-gradient(
+                          250px circle at ${mouseX}px ${mouseY}px,
+                          ${catColor}33,
+                          transparent 80%
+                        )
+                      `,
+                    }}
+                  />
+                  
                   {/* Icon + Name row */}
                   <div
                     style={{
@@ -132,6 +162,8 @@ export default function SkillsSection() {
                       alignItems: 'center',
                       gap: '0.6rem',
                       marginBottom: '0.75rem',
+                      position: 'relative',
+                      zIndex: 1,
                     }}
                   >
                     <span style={{ fontSize: '1.3rem', lineHeight: 1 }} aria-hidden="true">
@@ -196,6 +228,7 @@ export default function SkillsSection() {
                     {category}
                   </div>
                 </motion.div>
+                </Magnetic>
               )
             })}
           </motion.div>

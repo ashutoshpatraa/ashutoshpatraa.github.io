@@ -45,50 +45,72 @@ function ParticleField({ count, mouseX, mouseY }: ParticleFieldProps) {
         sizeAttenuation
         depthWrite={false}
         opacity={0.55}
+        blending={THREE.AdditiveBlending}
       />
     </Points>
   )
 }
 
-// ─── Floating Wireframe Shapes ─────────────────────────────────────────────────
-function FloatingShape({
-  position,
-  geometry,
-  color,
-  speed = 0.4,
-  delay = 0,
-  scale = 1,
-}: {
-  position: [number, number, number]
-  geometry: 'icosahedron' | 'torus' | 'octahedron'
-  color: string
-  speed?: number
-  delay?: number
-  scale?: number
-}) {
+// ─── Cyber Landscape (Interactive Grid) ──────────────────────────────────────
+function CyberLandscape({ mouseX, mouseY }: { mouseX: number; mouseY: number }) {
   const meshRef = useRef<THREE.Mesh>(null)
+  
+  // Custom geometry to create a fading edge grid
+  const geometry = useMemo(() => {
+    const geo = new THREE.PlaneGeometry(30, 30, 60, 60)
+    // Add noise to vertices to make it look like a terrain
+    const pos = geo.attributes.position
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i)
+      const y = pos.getY(i)
+      // distance from center
+      const dist = Math.sqrt(x*x + y*y)
+      // wave math
+      const z = Math.sin(dist * 0.5) * 0.5 + Math.cos(x * 0.5) * 0.2
+      pos.setZ(i, z)
+    }
+    geo.computeVertexNormals()
+    return geo
+  }, [])
 
   useFrame(({ clock }) => {
     if (meshRef.current) {
-      const t = clock.elapsedTime + delay
-      meshRef.current.rotation.x = t * speed * 0.7
-      meshRef.current.rotation.y = t * speed
-      meshRef.current.rotation.z = t * speed * 0.3
-      meshRef.current.position.y = position[1] + Math.sin(t * 0.5) * 0.3
+      const time = clock.elapsedTime
+      
+      // Subtle hovering
+      meshRef.current.position.y = -3 + Math.sin(time * 0.4) * 0.2
+      
+      // Move the terrain to simulate forward movement
+      const pos = meshRef.current.geometry.attributes.position
+      for (let i = 0; i < pos.count; i++) {
+        const x = pos.getX(i)
+        const y = pos.getY(i)
+        const dist = Math.sqrt(x*x + y*y)
+        const z = Math.sin(dist * 0.5 - time * 2) * 0.5 + Math.cos(x * 0.5 + time) * 0.2
+        pos.setZ(i, z)
+      }
+      pos.needsUpdate = true
+      
+      // Mouse Parallax
+      meshRef.current.rotation.y = mouseX * 0.1
+      meshRef.current.rotation.x = -Math.PI / 2 + Math.sin(time * 0.2) * 0.05 + mouseY * 0.05
     }
   })
 
   return (
-    <mesh ref={meshRef} position={position} scale={scale}>
-      {geometry === 'icosahedron' && <icosahedronGeometry args={[1, 1]} />}
-      {geometry === 'torus' && <torusGeometry args={[1, 0.3, 8, 20]} />}
-      {geometry === 'octahedron' && <octahedronGeometry args={[1, 0]} />}
-      <meshBasicMaterial color={color} wireframe opacity={0.35} transparent />
+    <mesh ref={meshRef} geometry={geometry} rotation={[-Math.PI / 2, 0, 0]} position={[0, -3, 0]}>
+      <meshBasicMaterial 
+        color="#A855F7" 
+        wireframe 
+        transparent 
+        opacity={0.15} 
+        blending={THREE.AdditiveBlending}
+      />
     </mesh>
   )
 }
 
-// ─── Scene Root (handles mouse parallax for entire scene) ─────────────────────
+// ─── Scene Root ─────────────────────────────────────────────────────────────
 function Scene({ particleCount, mouseX, mouseY }: { particleCount: number; mouseX: number; mouseY: number }) {
   const groupRef = useRef<THREE.Group>(null)
 
@@ -102,46 +124,8 @@ function Scene({ particleCount, mouseX, mouseY }: { particleCount: number; mouse
   return (
     <group ref={groupRef}>
       <ParticleField count={particleCount} mouseX={mouseX} mouseY={mouseY} />
-
-      {/* Icosahedron — left, blue */}
-      <FloatingShape
-        position={[-4, 0.5, -3]}
-        geometry="icosahedron"
-        color="#00D4FF"
-        speed={0.3}
-        scale={1.2}
-      />
-
-      {/* Torus — right, purple */}
-      <FloatingShape
-        position={[4.5, -0.5, -4]}
-        geometry="torus"
-        color="#A855F7"
-        speed={0.25}
-        delay={2}
-        scale={1.1}
-      />
-
-      {/* Octahedron — center-right, cyan */}
-      <FloatingShape
-        position={[2, 2.5, -5]}
-        geometry="octahedron"
-        color="#22D3EE"
-        speed={0.35}
-        delay={1}
-        scale={0.8}
-      />
-
-      {/* Small icosahedron — bottom left */}
-      <FloatingShape
-        position={[-3, -2.5, -3]}
-        geometry="icosahedron"
-        color="#A855F7"
-        speed={0.5}
-        delay={3}
-        scale={0.5}
-      />
-
+      <CyberLandscape mouseX={mouseX} mouseY={mouseY} />
+      
       {/* Lights */}
       <ambientLight intensity={0.1} />
       <pointLight position={[-5, 5, 5]} color="#00D4FF" intensity={2} />

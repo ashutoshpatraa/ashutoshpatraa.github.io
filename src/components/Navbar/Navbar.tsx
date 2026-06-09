@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import Magnetic from '../ui/Magnetic'
 const NAV_LINKS = [
   { href: '#hero', label: 'home' },
   { href: '#about', label: 'about' },
@@ -115,55 +115,59 @@ export default function Navbar() {
           {NAV_LINKS.map(({ href, label }) => {
             const isActive = activeSection === href.slice(1)
             return (
-              <a
-                key={href}
-                href={href}
-                style={{
-                  textDecoration: 'none',
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: '0.82rem',
-                  letterSpacing: '0.05em',
-                  color: isActive ? 'var(--blue)' : 'var(--text-secondary)',
-                  transition: 'color 0.3s ease',
-                  position: 'relative',
-                  paddingBottom: '2px',
-                }}
-                onMouseEnter={(e) => {
-                  if (!isActive) (e.currentTarget as HTMLElement).style.color = '#F0F4FF'
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive) (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'
-                }}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                <span style={{ color: 'var(--blue)', marginRight: '0.2rem', opacity: 0.7 }}>//</span>
-                {label}
-                {isActive && (
-                  <span
-                    style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: '1px',
-                      background: 'var(--blue)',
-                      boxShadow: '0 0 6px rgba(0,212,255,0.6)',
-                    }}
-                  />
-                )}
-              </a>
+              <Magnetic key={href} intensity={0.2}>
+                <a
+                  href={href}
+                  style={{
+                    textDecoration: 'none',
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: '0.82rem',
+                    letterSpacing: '0.05em',
+                    color: isActive ? 'var(--blue)' : 'var(--text-secondary)',
+                    transition: 'color 0.3s ease',
+                    position: 'relative',
+                    paddingBottom: '2px',
+                    display: 'inline-block',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) (e.currentTarget as HTMLElement).style.color = '#F0F4FF'
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'
+                  }}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  <span style={{ color: 'var(--blue)', marginRight: '0.2rem', opacity: 0.7 }}>//</span>
+                  {label}
+                  {isActive && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '1px',
+                        background: 'var(--blue)',
+                        boxShadow: '0 0 6px rgba(0,212,255,0.6)',
+                      }}
+                    />
+                  )}
+                </a>
+              </Magnetic>
             )
           })}
         </div>
 
         {/* CTA Button */}
-        <a
-          href="mailto:ashutoshpatra616@gmail.com"
-          className="btn-ghost hidden md:inline-flex"
-          style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}
-        >
-          <span>Hire Me</span>
-        </a>
+        <Magnetic intensity={0.3}>
+          <a
+            href="mailto:ashutoshpatra616@gmail.com"
+            className="btn-ghost hidden md:inline-flex"
+            style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}
+          >
+            <span>Hire Me</span>
+          </a>
+        </Magnetic>
 
         {/* Hamburger */}
         <button

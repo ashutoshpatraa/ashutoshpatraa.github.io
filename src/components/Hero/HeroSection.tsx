@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { useMousePosition } from '../../hooks/useMousePosition'
 import { usePerformanceTier } from '../../hooks/usePerformanceTier'
+import Magnetic from '../ui/Magnetic'
 
 const HeroCanvas = lazy(() => import('./HeroCanvas'))
 
@@ -253,16 +254,20 @@ export default function HeroSection() {
               marginBottom: '3rem',
             }}
           >
-            <a href="#projects" className="btn-primary">
-              View Projects
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-            <a href="#contact" className="btn-ghost">
-              Get In Touch
-            </a>
+            <Magnetic intensity={0.4}>
+              <a href="#projects" className="btn-primary">
+                View Projects
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </Magnetic>
+            <Magnetic intensity={0.4}>
+              <a href="#contact" className="btn-ghost">
+                Get In Touch
+              </a>
+            </Magnetic>
           </MotionDiv>
 
           {/* Social Links */}
@@ -310,32 +315,32 @@ export default function HeroSection() {
                 ),
               },
             ].map(({ href, label, icon }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith('mailto') ? undefined : '_blank'}
-                rel="noopener noreferrer"
-                aria-label={label}
-                title={label}
-                style={{
-                  color: 'var(--text-muted)',
-                  transition: 'all 0.3s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement
-                  el.style.color = 'var(--blue)'
-                  el.style.transform = 'translateY(-3px)'
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement
-                  el.style.color = 'var(--text-muted)'
-                  el.style.transform = 'translateY(0)'
-                }}
-              >
-                {icon}
-              </a>
+              <Magnetic key={label} intensity={0.25}>
+                <a
+                  href={href}
+                  target={href.startsWith('mailto') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  style={{
+                    color: 'var(--text-muted)',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '0.5rem',
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLElement
+                    el.style.color = 'var(--blue)'
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLElement
+                    el.style.color = 'var(--text-muted)'
+                  }}
+                >
+                  {icon}
+                </a>
+              </Magnetic>
             ))}
           </MotionDiv>
         </MotionDiv>

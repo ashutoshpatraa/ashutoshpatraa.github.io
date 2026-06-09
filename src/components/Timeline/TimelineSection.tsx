@@ -1,10 +1,16 @@
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { TIMELINE } from '../../data/timeline'
 
 export default function TimelineSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-10%' })
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start center', 'end center']
+  })
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1.2])
 
   return (
     <section
@@ -43,11 +49,8 @@ export default function TimelineSection() {
             margin: '0 auto',
           }}
         >
-          {/* Center vertical line */}
+          {/* Center vertical line scrubbed by scroll */}
           <motion.div
-            initial={{ scaleY: 0 }}
-            animate={isInView ? { scaleY: 1 } : {}}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             style={{
               position: 'absolute',
               left: '50%',
@@ -57,6 +60,7 @@ export default function TimelineSection() {
               background: 'linear-gradient(to bottom, transparent, var(--blue), var(--purple), transparent)',
               transformOrigin: 'top',
               transform: 'translateX(-50%)',
+              scaleY,
             }}
             aria-hidden="true"
           />

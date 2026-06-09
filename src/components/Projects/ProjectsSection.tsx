@@ -1,32 +1,57 @@
 import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { FEATURED_PROJECTS, OTHER_PROJECTS, type Project } from '../../data/projects'
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false)
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 })
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 })
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7.5deg', '-7.5deg'])
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7.5deg', '7.5deg'])
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const mouseX = e.clientX - rect.left
+    const mouseY = e.clientY - rect.top
+    x.set(mouseX / rect.width - 0.5)
+    y.set(mouseY / rect.height - 0.5)
+  }
+
+  const handleMouseLeave = () => {
+    setHovered(false)
+    x.set(0)
+    y.set(0)
+  }
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        background: 'var(--glass-bg)',
-        backdropFilter: 'blur(20px)',
-        border: `1px solid ${hovered ? 'rgba(0,212,255,0.3)' : 'var(--glass-border)'}`,
-        borderRadius: '16px',
-        overflow: 'hidden',
-        transition: 'all 0.4s cubic-bezier(0.16,1,0.3,1)',
-        transform: hovered ? 'translateY(-8px)' : 'translateY(0)',
-        boxShadow: hovered
-          ? '0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,212,255,0.08)'
-          : 'var(--glass-shadow)',
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'relative',
-      }}
+    <div style={{ perspective: '1000px' }}>
+      <motion.article
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 }}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: 'preserve-3d',
+          background: 'var(--glass-bg)',
+          backdropFilter: 'blur(20px)',
+          border: `1px solid ${hovered ? 'rgba(0,212,255,0.3)' : 'var(--glass-border)'}`,
+          borderRadius: '16px',
+          overflow: 'hidden',
+          boxShadow: hovered
+            ? '0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(0,212,255,0.1)'
+            : 'var(--glass-shadow)',
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'relative',
+        }}
       aria-label={`Project: ${project.title}`}
     >
       {/* Mission status badge */}
@@ -209,8 +234,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </span>
           ))}
         </div>
-      </div>
-    </motion.article>
+        </div>
+      </motion.article>
+    </div>
   )
 }
 
